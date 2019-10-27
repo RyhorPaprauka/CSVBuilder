@@ -20,8 +20,7 @@ public class BookController {
 
     private final BookService bookService;
 
-    @PostMapping
-    @RequestMapping(value = "/csv", produces = "text/csv")
+    @PostMapping(value = "/csv", produces = "text/csv")
     public ResponseEntity<byte[]> getCSVFile(@RequestBody @Valid BookFilter filter) {
         return ResponseEntity.ok()
                 .header("Content-Disposition", "attachment; filename=books.csv")
